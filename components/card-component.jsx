@@ -1,17 +1,15 @@
-import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
-import { Image, Text, View } from "react-native";
-import { MyImages } from "../constants/image";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Text, View } from "react-native";
 import { fontStyle, getPixSize, uiStyle } from "../styles/style";
-import { SIZES, colorApp } from "../styles/theme";
+import { SIZES } from "../styles/theme";
+import FavoriteButton from "./favorite-button";
 import InfoCard from "./info-card";
-function CardComponent({image,title,type,date}){
+import NftImageStack from "./ntf-image-stack";
+export default function CardComponent({image,title,type,date,avatars}){
     return (
-        <View style={[uiStyle.column, { marginHorizontal: getPixSize(10),marginVertical:getPixSize(5)}]}>
+  <View style={[uiStyle.column, { marginHorizontal: getPixSize(10),marginVertical:getPixSize(5)}]}>
         <View style={uiStyle.cardPerson}>
-          <Image
-            source={MyImages[image]}
-            style={uiStyle.imageCard}
-          />
+          <NftImageStack mainImage={image} containerHeight="70%" avatars={avatars}></NftImageStack>
           <View
             style={[
               uiStyle.column,
@@ -23,9 +21,7 @@ function CardComponent({image,title,type,date}){
             <InfoCard title="3.9 K" icon="eye-outline"></InfoCard>
             <InfoCard title="12" icon="chat-processing-outline" ></InfoCard>
             <InfoCard title="95.25" icon="ethereum"></InfoCard>
-            <View style={uiStyle.buttonFav}>
-            <MaterialIcons name="favorite" size={SIZES.large} color={colorApp.second} />
-            </View>
+            <FavoriteButton initialFavorite={true} size={SIZES.large}/>
             </View>
           </View>
         </View>
@@ -33,14 +29,13 @@ function CardComponent({image,title,type,date}){
     )
 }
 
-export default CardComponent;
 
 
 
 function HeaderCard({title,type,date}) {
     return (
       <View style={[uiStyle.column]}>
-        <Text style={[fontStyle.nameText, { marginTop: SIZES.tiny }]}>
+        <Text style={[fontStyle.nameText, { marginTop: SIZES.small }]}>
          {title}
         </Text>
         <View

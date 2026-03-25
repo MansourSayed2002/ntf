@@ -73,8 +73,9 @@ export const uiStyle = StyleSheet.create({
     backgroundColor: colorApp.second,
   },
   buttonFav:{
-    width: PixelRatio.getPixelSizeForLayoutSize(13),
-    height: PixelRatio.getPixelSizeForLayoutSize(13),
+    // width: PixelRatio.getPixelSizeForLayoutSize(13),
+    // height: PixelRatio.getPixelSizeForLayoutSize(13),
+    padding: PixelRatio.getPixelSizeForLayoutSize(3),
     marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(5),
     marginVertical:PixelRatio.getPixelSizeForLayoutSize(8),
     borderRadius:  PixelRatio.getPixelSizeForLayoutSize(20),
@@ -85,15 +86,18 @@ export const uiStyle = StyleSheet.create({
     borderWidth:1
   },
   row: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    justifyContent:"center",
     gap: SIZES.tiny,
   },
   column: {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
+  },
+  stack:{
+     position: "absolute",
   },
   imagecircle: {
     resizeMode: "cover",
@@ -105,7 +109,6 @@ export const uiStyle = StyleSheet.create({
     borderRadius: SIZES.normal,
     alignSelf: 'stretch', 
     height: PixelRatio.getPixelSizeForLayoutSize(180),
-    alignItems: "center",
     overflow: "hidden",
     position: "relative", 
   },
@@ -113,20 +116,11 @@ export const uiStyle = StyleSheet.create({
     backgroundColor: colorApp.second,
     paddingVertical: PixelRatio.getPixelSizeForLayoutSize(.5),
     paddingHorizontal: PixelRatio.getPixelSizeForLayoutSize(8),
+    height:PixelRatio.getPixelSizeForLayoutSize(14),
+    width:PixelRatio.getPixelSizeForLayoutSize(35),
     borderRadius: SIZES.normal,
     marginVertical: SIZES.small,
     marginHorizontal: PixelRatio.getPixelSizeForLayoutSize(2),
-  },
-  searchInput:{
-    // borderWidth:1,
-    // flex:3,
-    // marginRight:PixelRatio.getPixelSizeForLayoutSize(10),
-    // padding:PixelRatio.getPixelSizeForLayoutSize(6),
-    // fontFamily:FONTS.bold,
-    // color:colorApp.white,
-    // backgroundColor:colorApp.cardBg,
-    // borderTopRightRadius:SIZES.medium,
-    // borderBottomRightRadius:SIZES.medium
   },
   Searchcard:{
     width:"90%",
